@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>try{var _t=localStorage.getItem('mrth')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');document.documentElement.dataset.theme=_t;document.documentElement.style.colorScheme=_t}catch(e){}</script>
+<title>برنامج المرشد المهني</title>
+<script>
+/* ======== إعدادات Firebase — الصق بياناتك هنا ======== */
+window.FIREBASE_CONFIG={
+  apiKey:"AIzaSyCU7oTqJmWlLlNC7Goyvnzqg4eVZrjnQHM",
+  authDomain:"gujg-57287.firebaseapp.com",
+  projectId:"gujg-57287",
+  storageBucket:"gujg-57287.firebasestorage.app",
+  messagingSenderId:"640834367104",
+  appId:"1:640834367104:web:b8c1972ffa32cc95408065"
+};
+/* معرّف غرفة المنظمة: كل من يفتح الصفحة بنفس المعرّف يرى نفس البيانات */
+window.ROOM="m-l3vPtnOVE4mydGh30kw";
+/* ===================================================== */
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef3f2;--card:#fff;--tx:#143533;--mut:#6b8280;--pr:#0b8f7e;--pr2:#066a5f;--ln:#dce8e6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme=dark]{--bg:#0e1b1a;--card:#162826;--tx:#e6f2f0;--mut:#8fb0ab;--ln:#244240;--pr:#27b3a0;--pr2:#6fe0d0}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Tajawal,Tahoma,sans-serif}
+header{position:relative;background:linear-gradient(135deg,#0a5c5a,#009688 55%,#48a661);color:#fff;text-align:center;padding:22px 14px 18px;border-radius:0 0 34px 34px;box-shadow:0 10px 28px rgba(0,150,136,.25)}
+header h1{margin:0;font-family:Amiri,serif;font-size:clamp(24px,5vw,36px)}header p{margin:5px 0 0;font-size:13px;font-weight:700;opacity:.92}header p:empty{display:none}
+.modes{display:inline-flex;background:rgba(255,255,255,.18);border-radius:99px;padding:3px;margin-top:12px;flex-wrap:wrap;justify-content:center}
+.modes button{border:0;background:none;color:#fff;padding:7px 18px;border-radius:99px;font:inherit;font-size:13px;cursor:pointer}
+.modes button.on{background:#fff;color:#066a5f;font-weight:700}
+.tg{position:absolute;top:12px;left:12px;border:0;background:rgba(255,255,255,.2);color:#fff;border-radius:99px;width:36px;height:36px;font-size:16px;cursor:pointer}.tg.r{left:auto;right:12px}
+main{max-width:1000px;margin:0 auto;padding:14px}
+.card{background:var(--card);border-radius:22px;padding:16px;margin-bottom:14px;box-shadow:0 4px 16px rgba(0,0,0,.05)}
+h2{margin:0 0 12px;font-size:19px;color:var(--pr2);text-align:center;font-family:Amiri,serif}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.tabs button,.chip{border:1px solid var(--ln);background:var(--card);color:var(--tx);padding:7px 14px;border-radius:99px;font:inherit;font-size:13px;cursor:pointer}
+.tabs button.on,.chip.on{background:var(--pr);color:#fff;border-color:var(--pr)}
+input,select{font:inherit;font-size:14px;padding:8px 10px;border:1px solid var(--ln);border-radius:10px;background:var(--bg);color:var(--tx);max-width:100%}
+input[type=number]{width:80px}input[type=checkbox]{width:auto}
+.btn{border:0;background:var(--pr);color:#fff;padding:8px 14px;border-radius:10px;font:inherit;font-size:13px;cursor:pointer}
+.btn:disabled{opacity:.4;cursor:not-allowed}.btn.x{background:#d9534f;padding:6px 10px}.btn.g{background:var(--bg);color:var(--tx);border:1px solid var(--ln)}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+.line{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--ln);flex-wrap:wrap}.line:last-child{border:0}
+.mut{color:var(--mut);font-size:12px}.empty{color:var(--mut);font-size:13px;text-align:center;padding:12px}
+.gl{margin:14px 0 6px;font-weight:800;color:var(--pr)}
+.lab{display:flex;gap:8px;align-items:center;margin-bottom:6px;flex-wrap:wrap}.lab span{flex:0 0 150px;font-size:13px;color:var(--mut);font-weight:700}.lab input{flex:1;min-width:150px}
+.wrap{overflow-x:auto}table{width:100%;border-collapse:separate;border-spacing:0 5px}
+th{background:rgba(11,143,126,.12);color:var(--pr2);padding:8px;font-size:13px}
+td{background:var(--bg);padding:6px 8px;text-align:center;font-size:14px;font-weight:600}
+td:first-child{border-radius:0 10px 10px 0;text-align:right;font-weight:800}td:last-child{border-radius:10px 0 0 10px}
+.seg{display:inline-flex;gap:3px;flex-wrap:wrap;justify-content:center}
+.sb{border:1px solid var(--ln);background:var(--card);color:var(--mut);border-radius:8px;padding:5px 8px;font:inherit;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap}
+.sb.on{background:var(--c);border-color:var(--c);color:#fff}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:14px}
+.stat{background:var(--card);border-radius:18px;padding:12px;text-align:center;border-top:4px solid var(--c,var(--pr))}
+.stat b{display:block;font-size:28px;color:var(--pr2)}.stat span{font-size:13px;color:var(--mut);font-weight:700}
+.wk{display:inline-block;background:rgba(11,143,126,.12);color:var(--pr2);padding:3px 12px;border-radius:99px;font-weight:800;font-size:13px}
+.grid{border-collapse:collapse;border-spacing:0}.grid th,.grid td{border:1px solid var(--ln)}.grid td{border-radius:0!important}.grid td.dy{text-align:center;font-weight:700;white-space:nowrap}.grid tr.pf td{border-top:2px solid var(--pr)}
+#pr{display:none}
+@media print{
+ @page{size:A4 landscape;margin:10mm}
+ body>*:not(#pr){display:none!important}
+ #pr{display:block;color:#000;background:#fff;font-family:Tajawal,Tahoma,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ #pr h1{text-align:center;margin:0 0 4px;font-size:20px}#pr .sub{text-align:center;font-size:12px;margin-bottom:8px}
+ #pr h3{margin:10px 0 4px;font-size:14px}
+ #pr table{border-spacing:0;border-collapse:collapse;width:100%;margin-bottom:8px}
+ #pr th,#pr td{border:1px solid #888;background:#fff;color:#000;padding:2px 3px;font-size:10px;text-align:center;border-radius:0!important}
+ #pr th{background:#e5efed}#pr td:first-child{text-align:right;white-space:nowrap}
+ #pr td.dy{text-align:center;white-space:nowrap}#pr thead{display:table-header-group}#pr tbody{page-break-inside:avoid}
+ #pr .pb{page-break-after:always}#pr .lg{font-size:10px;margin-bottom:6px}
+ #pr tr{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<header>
+ <button class="tg r" id="fsb" onclick="toggleFs()">⛶</button>
+ <button class="tg" id="tg" onclick="toggleTheme()">🌙</button>
+ <h1><span id="ttl"></span> <span id="ico"></span></h1>
+ <p id="org"></p><p id="cl" style="font-size:11px;opacity:.9;margin:6px 0 0"></p><p id="dt" style="font-size:12px;opacity:.85"></p>
+ <div class="modes" id="modes"></div>
+</header>
+<main id="app"></main>
+<div id="pr"></div>
+<script>
+const $=id=>document.getElementById(id);
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uid=()=>Math.random().toString(36).slice(2,9);
+const KEY='murshid_attendance_v1';
+const LB=[['icon','أيقونة العنوان','📋'],['title','اسم البرنامج','برنامج المرشد المهني'],['org','العنوان الفرعي (الجهة)',''],['modeV','خانة عرض الحضور (للعرض فقط)','عرض الحضور'],['modeT','خانة الإحصائيات','الإحصائيات'],['modeM','خانة الرصد','الرصد'],['modeA','خانة التحضير (داخل الرصد)','التحضير'],['modeS','خانة الإعدادات (داخل الرصد)','الإعدادات'],['grpStats','عنوان الإحصائيات الجماعية','الإحصائيات الجماعية']];
+const LD={};LB.forEach(x=>LD[x[0]]=x[2]);
+const ST=[['P','حاضر','ح','#0b8f7e'],['A','غائب','غ','#d9534f'],['E','متأخر بعذر','ت ب','#d99a00'],['L','متأخر بدون عذر','ت ع','#e8590c']];
+const DAYS=['السبت','الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة'];
+const FT=[['theme','زر المظهر الليلي/النهاري'],['fs','زر ملء الشاشة'],['qsearch','البحث السريع عن مشارك في التحضير وعرض الحضور'],['bulk','أزرار «الكل حاضر» و«تفريغ» في التحضير'],['delStu','زر حذف المشارك'],['addStu','إضافة مشارك جديد'],['wplace','جهة العمل (تظهر بجانب اسم المشارك)']];
+function init(){const w=uid();return{groupsOn:false,groups:['المجموعة الأولى'].map(n=>({id:uid(),name:n,on:true,students:[]})),days:DAYS.map((n,i)=>({n,on:i>0&&i<6})),weeks:[{id:w,name:'الأسبوع 1'}],cur:w,att:{},labels:{},feat:{},locks:{},settings:{dateMode:'none'}}}
+let S;try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+if(!S||!S.groups)S=init();
+S.labels=S.labels||{};S.feat=S.feat||{};S.locks=S.locks||{};S.att=S.att||{};S.settings=S.settings||{dateMode:'none'};S.dates=S.dates||{};S.groupsOn=!!S.groupsOn;if(!S.groups.length)S.groups.push({id:uid(),name:'المجموعة الأولى',on:true,students:[]});
+const SEED=[['د. عوض المنكاع','جمعية مسارات المهنة'],['عبدالمجيد الرشيد','جمعية أريب الشبابية'],['ريان الشايع','جمعية أريب الشبابية'],['عمر الجعيد','جمعية بصمات المستقبل الشبابية'],['سليمان الزيد','دوحة الأفكار / وهج'],['راكان الشرهان','جمعية ثروة الشبابية'],['عبدالكريم الرويلي','جمعية جدير الشبابية'],['محمد الدخيل','جمعية قيم الشبابية'],['جابر العرياني','جمعية آفاق الخير الشبابية'],['معتز الراشد','جمعية مكنون / طاقات / الرياحين'],['عبدالله الأسمري','جمعية الرياحين'],['تميم الحبس','جيل العطاء الوقفية'],['محمد اليحيى','جمعية الرياحين'],['يوسف باسليمان','جمعية أفياء الشبابية'],['أسامة العمري','مركز دلائل التعظيم']];
+if(!S.seed1){const all=S.groups.flatMap(g=>g.students);SEED.forEach(x=>{const e=all.find(a=>a.name===x[0]);if(e){if(!e.org)e.org=x[1]}else S.groups[0].students.push({id:uid(),name:x[0],org:x[1]})});S.seed1=1;try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}try{window.cloudSync&&window.cloudSync()}catch(e){}};
+window.__S=()=>S;
+const T=k=>{const v=S.labels[k];return v?v:LD[k]};
+const F=k=>S.feat[k]!==false;
+const DT=(w,i)=>S.dates[w+'|'+i]||'';
+const OT=s=>F('wplace')?`<td>${esc(s.org||'')}</td>`:'',OH=r=>F('wplace')?`<th${r>1?` rowspan="${r}"`:''}>جهة العمل</th>`:'';
+let mode='v',sub='a',tab=null,vtab=null,vw=null,vq='',day=0,rq='',sc='cur',unlocked={};
+const G=id=>S.groups.find(g=>g.id===id);
+const grpList=()=>S.groupsOn?S.groups.filter(g=>g.on).map(g=>({id:g.id,name:g.name,students:g.students})):[{id:'*',name:'جميع المشاركين',students:S.groups.flatMap(g=>g.students)}];
+const GS=id=>id==='*'?S.groups.flatMap(g=>g.students):G(id).students;
+const curW=()=>S.weeks.find(w=>w.id===S.cur)||S.weeks[0];
+/* theme / fs */
+function setTheme(t){document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t;$('tg').textContent=t==='dark'?'☀️':'🌙'}
+function toggleTheme(){const t=document.documentElement.dataset.theme==='dark'?'light':'dark';setTheme(t);try{localStorage.setItem('mrth',t)}catch(e){}}
+function toggleFs(){if(!document.fullscreenElement)document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen().catch(()=>{});else document.exitFullscreen&&document.exitFullscreen()}
+function ask(msg,cb,o){o=o||{};const d=document.createElement('div');d.className='ovl';d.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;z-index:99;padding:20px';
+ d.innerHTML='<div class="card" style="max-width:340px;text-align:center;margin:0"><p style="font-weight:700">'+esc(msg)+'</p>'+(o.input?'<input id="aiv" type="password" style="width:100%;text-align:center;margin-bottom:10px">':'')+'<div class="row" style="justify-content:center"><button class="btn'+(o.red?' x':'')+'" id="ay">'+(o.yes||'موافق')+'</button><button class="btn g" id="an">إلغاء</button></div></div>';
+ document.body.appendChild(d);const i=d.querySelector('#aiv');if(i){i.focus();i.onkeydown=e=>{if(e.key==='Enter')d.querySelector('#ay').click()}}
+ d.querySelector('#an').onclick=()=>d.remove();d.querySelector('#ay').onclick=()=>{const v=i?i.value:'';d.remove();cb(v)}}
+function toast(m){const d=document.createElement('div');d.className='ovl';d.textContent=m;d.style.cssText='position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#143533;color:#fff;padding:10px 18px;border-radius:99px;z-index:99;text-align:center;max-width:90%';document.body.appendChild(d);setTimeout(()=>d.remove(),2600)}
+/* locks */
+const LKI=k=>S.locks[k]&&S.locks[k].on?' 🔒':'';
+const locked=k=>S.locks[k]&&S.locks[k].on&&!unlocked[k];
+function gate(k,cb){if(!locked(k))return cb();ask('أدخل رمز القفل للمتابعة',v=>{if(v===S.locks[k].code){unlocked[k]=1;cb()}else toast('الرمز غير صحيح')},{input:1})}
+const lockOf=()=>mode==='v'?'view':mode==='t'?'stats':sub==='a'?'rasd':'set';
+function go(m){const k=m==='v'?'view':m==='t'?'stats':sub==='a'?'rasd':'set';gate(k,()=>{mode=m;render()})}
+function goSub(x){gate(x==='a'?'rasd':'set',()=>{sub=x;mode='m';render()})}
+/* date */
+function dateText(){const m=S.settings.dateMode;if(!m||m==='none')return '';const d=new Date(),o={day:'numeric',month:'long',year:'numeric'};
+ const wd=d.toLocaleDateString('ar-SA',{weekday:'long'}),hj=d.toLocaleDateString('ar-SA-u-ca-islamic-umalqura-nu-latn',o),gr=d.toLocaleDateString('ar-SA-u-ca-gregory-nu-latn',o);
+ const p={d:[wd],dh:[wd,hj],dg:[wd,gr],dhg:[wd,hj+' | '+gr],h:[hj],g:[gr],hg:[hj+' | '+gr]}[m]||[];return p.length?'📅 '+p.join(' — '):''}
+/* render */
+function render(){
+ setTheme(document.documentElement.dataset.theme);
+ $('ico').textContent=T('icon');$('ttl').textContent=T('title');document.title=T('title');$('org').textContent=T('org');$('dt').textContent=dateText();
+ $('tg').style.display=F('theme')?'':'none';$('fsb').style.display=F('fs')?'':'none';
+ $('modes').innerHTML=[['v','modeV','view'],['t','modeT','stats']].map(x=>`<button class="${mode===x[0]?'on':''}" onclick="go('${x[0]}')">${esc(T(x[1]))}${LKI(x[2])}</button>`).join('')+`<button class="${mode==='m'?'on':''}" onclick="go('m')">${esc(T('modeM'))}</button>`;
+ const lk=lockOf();
+ if(locked(lk)){$('app').innerHTML=`<div class="card empty">🔒 هذه الخانة مقفلة بالرمز<div class="row" style="justify-content:center;margin-top:10px"><button class="btn" onclick="gate('${lk}',render)">إدخال الرمز</button></div></div>`;return}
+ $('app').innerHTML=(mode==='m'?subNav():'')+(mode==='v'?viewV():mode==='t'?statsV():sub==='a'?rasdV():settingsV());
+}
+/* الرصد: التبويبات الداخلية */
+const subNav=()=>`<div class="tabs" style="justify-content:center">`+[['a','modeA','rasd'],['s','modeS','set']].map(x=>`<button class="${sub===x[0]?'on':''}" onclick="goSub('${x[0]}')">${esc(T(x[1]))}${LKI(x[2])}</button>`).join('')+'</div>';
+/* عرض الحضور (للعرض فقط) */
+function viewV(){
+ const gs=grpList();
+ if(!gs.length)return '<div class="card empty">لا توجد مجموعات مفعّلة. فعّل مجموعة من '+esc(T('modeM'))+' ← '+esc(T('modeS'))+'.</div>';
+ const ds=S.days.map((d,i)=>({...d,i})).filter(d=>d.on);
+ if(!ds.length)return '<div class="card empty">لا توجد أيام مفعّلة. فعّل الأيام من '+esc(T('modeM'))+' ← '+esc(T('modeS'))+'.</div>';
+ if(!S.weeks.some(w=>w.id===vw))vw=S.cur;
+ if(!gs.some(g=>g.id===vtab))vtab=gs[0].id;
+ const g=gs.find(x=>x.id===vtab),st=vq?g.students.filter(s=>s.name.includes(vq)):g.students,wk=S.weeks.find(w=>w.id===vw);
+ let h=S.groupsOn?'<div class="tabs">'+gs.map(x=>`<button class="${vtab===x.id?'on':''}" onclick="vtab='${x.id}';render()">${esc(x.name)} (${x.students.length})</button>`).join('')+'</div>':'';
+ h+=`<div class="card"><div class="row">`+S.weeks.map(w=>`<button class="chip ${vw===w.id?'on':''}" onclick="vw='${w.id}';render()">${esc(w.name)}</button>`).join('')+`</div>`+
+ `<div class="row" style="justify-content:space-between"><span class="wk">📅 ${esc(wk.name)}</span><span class="mut">${ST.map(x=>`<b style="color:${x[3]}">●</b> ${x[1]}`).join(' &nbsp; ')}</span></div>`+
+ (F('qsearch')?`<div class="row"><input id="vq" style="width:100%" placeholder="بحث سريع عن مشارك..." value="${esc(vq)}" oninput="vq=this.value;render();var e=$('vq');e.focus();e.setSelectionRange(vq.length,vq.length)"></div>`:'')+
+ `<div class="wrap"><table class="grid"><tr><th rowspan="2">المشارك</th>${OH(2)}<th rowspan="2">اليوم والتاريخ</th><th colspan="2">حالة الحضور</th></tr><tr><th>الجلسة الأولى</th><th>الجلسة الثانية</th></tr>`+
+ (st.length?st.map(s=>ds.map((d,n)=>{const t=DT(vw,d.i),cell=k=>{const v=S.att[key(vw,d.i,k,s.id)],x=ST.find(a=>a[0]===v);return x?`<td style="background:${x[3]};color:#fff;font-weight:700;white-space:nowrap">${x[1]}</td>`:'<td></td>'};
+  return `<tr class="${n?'':'pf'}">`+(n?'':`<td rowspan="${ds.length}">${esc(s.name)}</td>`+(F('wplace')?`<td rowspan="${ds.length}">${esc(s.org||'')}</td>`:''))+`<td class="dy">${esc(d.n)}${t?' <bdi>'+esc(t)+'</bdi>':''}</td>`+cell(0)+cell(1)+'</tr>'}).join('')).join(''):`<tr><td colspan="${3+(F('wplace')?1:0)+2}" class="empty">لا يوجد مشاركون</td></tr>`)+
+ '</table></div><div class="mut" style="margin-top:6px">هذه الخانة للعرض فقط، ويتم التحضير من «'+esc(T('modeM'))+' ← '+esc(T('modeA'))+'».</div></div>';
+ return h}
+/* التحضير */
+const key=(w,d,k,s)=>`${w}|${d}|${k}|${s}`;
+function rasdV(){
+ const gs=grpList();
+ if(!gs.length)return '<div class="card empty">لا توجد مجموعات مفعّلة. فعّل مجموعة من '+esc(T('modeS'))+'.</div>';
+ const ds=S.days.map((d,i)=>({...d,i})).filter(d=>d.on);
+ if(!ds.length)return '<div class="card empty">لا توجد أيام مفعّلة. فعّل الأيام من '+esc(T('modeS'))+'.</div>';
+ if(!gs.some(g=>g.id===tab))tab=gs[0].id;if(!ds.some(d=>d.i===day))day=ds[0].i;
+ const g=gs.find(x=>x.id===tab),st=rq?g.students.filter(s=>s.name.includes(rq)):g.students;
+ let h='<div class="tabs">'+gs.map(x=>`<button class="${tab===x.id?'on':''}" onclick="tab='${x.id}';render()">${esc(x.name)} (${x.students.length})</button>`).join('')+'</div>';
+ if(!S.groupsOn)h='';
+ h+=`<div class="card"><div class="row" style="justify-content:space-between"><span class="wk">📅 ${esc(curW().name)}</span><span class="mut">${ST.map(s=>`<b style="color:${s[3]}">●</b> ${s[1]}`).join(' &nbsp; ')}</span></div>`+
+ `<div class="row">`+ds.map(d=>`<button class="chip ${day===d.i?'on':''}" onclick="day=${d.i};render()">${esc(d.n)}</button>`).join('')+'</div>'+
+ (F('qsearch')?`<div class="row"><input id="rq" style="width:100%" placeholder="بحث سريع عن مشارك..." value="${esc(rq)}" oninput="rq=this.value;render();var e=$('rq');e.focus();e.setSelectionRange(rq.length,rq.length)"></div>`:'')+
+ `<div class="wrap"><table class="grid"><tr><th>المشارك</th>${OH(0)}`+[0,1].map(k=>`<th>${k?'الجلسة الثانية':'الجلسة الأولى'}${F('bulk')?`<br><button class="btn g" style="padding:2px 8px;font-size:11px" onclick="bulk('${g.id}',${k},'P')">الكل حاضر</button> <button class="btn g" style="padding:2px 8px;font-size:11px" onclick="bulk('${g.id}',${k},'')">تفريغ</button>`:''}</th>`).join('')+(F('delStu')?'<th></th>':'')+'</tr>'+
+ (st.length?st.map(s=>'<tr><td>'+esc(s.name)+'</td>'+OT(s)+[0,1].map(k=>{const v=S.att[key(S.cur,day,k,s.id)];return `<td><div class="seg">`+ST.map(x=>`<button class="sb ${v===x[0]?'on':''}" style="--c:${x[3]}" onclick="setA('${s.id}',${k},'${x[0]}')">${x[1]}</button>`).join('')+'</div></td>'}).join('')+(F('delStu')?`<td><button class="btn x" onclick="delSt('${g.id}','${s.id}')">حذف</button></td>`:'')+'</tr>').join(''):`<tr><td colspan="5" class="empty">لا يوجد مشاركون في هذه المجموعة</td></tr>`)+'</table></div>'+
+ (F('addStu')?`<div class="row" style="margin-top:10px"><input id="ns" placeholder="اسم المشارك الجديد..." style="flex:1;max-width:260px" onkeydown="if(event.key==='Enter')addSt('${g.id}')">${F('wplace')?`<input id="no" placeholder="جهة العمل..." style="flex:1;max-width:260px" onkeydown="if(event.key==='Enter')addSt('${g.id}')">`:''}<button class="btn" onclick="addSt('${g.id}')">+ إضافة مشارك</button></div>`:'')+'</div>';
+ return h}
+function setA(s,k,v){const kk=key(S.cur,day,k,s);if(S.att[kk]===v)delete S.att[kk];else S.att[kk]=v;save();render()}
+function bulk(g,k,v){GS(g).forEach(s=>{const kk=key(S.cur,day,k,s.id);if(v)S.att[kk]=v;else delete S.att[kk]});save();render()}
+function addSt(g){const v=$('ns').value.trim();if(!v)return;(G(g)||S.groups[0]).students.push({id:uid(),name:v,org:$('no')?$('no').value.trim():''});save();render()}
+function delSt(g,s){ask('حذف المشارك وسجل تحضيره؟',()=>{S.groups.forEach(x=>{x.students=x.students.filter(a=>a.id!==s)});Object.keys(S.att).forEach(k=>{if(k.endsWith('|'+s))delete S.att[k]});save();render()},{red:1,yes:'حذف'})}
+/* الإحصائيات والتقارير */
+const wsFor=x=>x==='cur'?[curW().id]:S.weeks.map(w=>w.id),wsOf=()=>wsFor(sc);
+function cnt(sid,ws){const c={P:0,A:0,E:0,L:0,days:0,weeks:0,sess:0};ws.forEach(w=>{let wa=0;S.days.forEach((d,i)=>{if(!d.on)return;let da=0;[0,1].forEach(k=>{const v=S.att[key(w,i,k,sid)];if(v){c[v]++;if(v!=='A'){c.sess++;da=1}}});c.days+=da;wa+=da});if(wa)c.weeks++});return c}
+const rate=c=>{const t=c.P+c.A+c.E+c.L;return t?Math.round((c.P+c.E+c.L)/t*100):0};
+function gWeeks(g,ws){let n=0;ws.forEach(w=>{if(g.students.some(s=>cnt(s.id,[w]).weeks))n++});return n}
+function statsRows(ws){
+ const gs=grpList(),tot={P:0,A:0,E:0,L:0};let n=0;
+ const rows=gs.map(g=>{const a={P:0,A:0,E:0,L:0,days:0,weeks:0,sess:0,n:0};return{g,a,r:g.students.map(s=>{const c=cnt(s.id,ws);ST.forEach(x=>tot[x[0]]+=c[x[0]]);['P','A','E','L','days','weeks','sess'].forEach(k=>a[k]+=c[k]);a.n++;n++;return{s,c}})}});
+ return{rows,tot,n}}
+function statsV(){
+ const ws=wsOf(),R=statsRows(ws),rows=R.rows,tot=R.tot,n=R.n,gs=rows;
+ let h=`<div class="card"><div class="row" style="justify-content:center"><button class="chip ${sc==='cur'?'on':''}" onclick="sc='cur';render()">الأسبوع الحالي (${esc(curW().name)})</button><button class="chip ${sc==='all'?'on':''}" onclick="sc='all';render()">جميع الأسابيع</button></div>`+
+ `<div class="row" style="justify-content:center"><button class="btn" onclick="doPrint(true)">🖨 الطباعة وملف PDF</button></div><div class="mut" style="text-align:center">الطباعة من هنا تشمل ${esc(T('modeV'))} و${esc(T('modeT'))} معاً حسب الخيار أعلاه. لخيارات أخرى: ${esc(T('modeM'))} ← ${esc(T('modeS'))} ← الطباعة.</div></div>`+
+ `<div class="stats"><div class="stat"><b>${n}</b><span>إجمالي المشاركين</span></div>`+ST.map(x=>`<div class="stat" style="--c:${x[3]}"><b>${tot[x[0]]}</b><span>${x[1]}</span></div>`).join('')+`<div class="stat"><b>${rate(tot)}%</b><span>نسبة الحضور</span></div></div>`;
+ if(S.groupsOn&&rows.length)h+=`<div class="card"><h2>${esc(T('grpStats'))}</h2><div class="wrap"><table><tr><th>المجموعة</th><th>المشاركون</th><th>أيام الحضور</th><th>أسابيع الحضور</th><th>جلسات الحضور</th>`+ST.map(x=>`<th>${x[1]}</th>`).join('')+'<th>نسبة الحضور</th></tr>'+rows.map(o=>`<tr><td>${esc(o.g.name)}</td><td>${o.a.n}</td><td>${o.a.days}</td><td>${gWeeks(o.g,ws)}</td><td>${o.a.sess}</td>`+ST.map(y=>`<td>${o.a[y[0]]}</td>`).join('')+`<td><b style="color:var(--pr)">${rate(o.a)}%</b></td></tr>`).join('')+'</table></div></div>';
+ rows.forEach(o=>{h+=`<div class="card"><h2>${S.groupsOn?esc(o.g.name):'إحصائيات المشاركين'}</h2><div class="wrap"><table><tr><th>المشارك</th><th>أيام الحضور</th><th>أسابيع الحضور</th><th>جلسات الحضور</th>`+ST.map(x=>`<th>${x[1]}</th>`).join('')+'<th>نسبة الحضور</th></tr>'+
+  (o.r.length?o.r.map(x=>`<tr><td>${esc(x.s.name)}</td><td>${x.c.days}</td><td>${x.c.weeks}</td><td>${x.c.sess}</td>`+ST.map(y=>`<td>${x.c[y[0]]}</td>`).join('')+`<td><b style="color:var(--pr)">${rate(x.c)}%</b></td></tr>`).join(''):'<tr><td colspan="${ST.length+5}" class="empty">لا يوجد مشاركون</td></tr>')+'</table></div></div>'});
+ if(!gs.length)h+='<div class="card empty">لا توجد مجموعات مفعّلة</div>';
+ return h}
+function viewPrint(wid){
+ const w=S.weeks.find(x=>x.id===wid),ds=S.days.map((d,i)=>({...d,i})).filter(d=>d.on),wp=F('wplace');
+ return grpList().map(g=>`<h3>${esc(g.name)} — ${esc(w.name)}</h3><table><thead><tr><th rowspan="2">المشارك</th>${wp?'<th rowspan="2">جهة العمل</th>':''}<th rowspan="2">اليوم والتاريخ</th><th colspan="2">حالة الحضور</th></tr><tr><th>الجلسة الأولى</th><th>الجلسة الثانية</th></tr></thead>`+
+  (g.students.length?g.students.map(s=>'<tbody>'+ds.map((d,n)=>{const t=DT(wid,d.i),cell=k=>{const v=S.att[key(wid,d.i,k,s.id)],x=ST.find(a=>a[0]===v);return x?`<td style="background:${x[3]};color:#fff;font-weight:700">${x[1]}</td>`:'<td></td>'};
+   return '<tr>'+(n?'':`<td rowspan="${ds.length}">${esc(s.name)}</td>`+(wp?`<td rowspan="${ds.length}">${esc(s.org||'')}</td>`:''))+`<td class="dy">${esc(d.n)}${t?' <bdi>'+esc(t)+'</bdi>':''}</td>`+cell(0)+cell(1)+'</tr>'}).join('')+'</tbody>').join(''):`<tbody><tr><td colspan="${4+(wp?1:0)}">لا يوجد مشاركون</td></tr></tbody>`)+'</table>').join('')}
+function statsPrint(ws,label){
+ const R=statsRows(ws),th=ST.map(x=>`<th>${x[1]}</th>`).join('');
+ let h=`<h3>${esc(T('modeT'))} — ${esc(label)}</h3><div class="lg">إجمالي المشاركين: <b>${R.n}</b> ، `+ST.map(x=>`${x[1]}: <b>${R.tot[x[0]]}</b>`).join(' ، ')+` ، نسبة الحضور: <b>${rate(R.tot)}%</b></div>`;
+ if(S.groupsOn&&R.rows.length)h+=`<h3>${esc(T('grpStats'))}</h3><table><tr><th>المجموعة</th><th>المشاركون</th><th>أيام الحضور</th><th>أسابيع الحضور</th><th>جلسات الحضور</th>${th}<th>نسبة الحضور</th></tr>`+R.rows.map(o=>`<tr><td>${esc(o.g.name)}</td><td>${o.a.n}</td><td>${o.a.days}</td><td>${gWeeks(o.g,ws)}</td><td>${o.a.sess}</td>`+ST.map(y=>`<td>${o.a[y[0]]}</td>`).join('')+`<td><b>${rate(o.a)}%</b></td></tr>`).join('')+'</table>';
+ R.rows.forEach(o=>{h+=`<h3>${S.groupsOn?esc(o.g.name):'إحصائيات المشاركين'}</h3><table><thead><tr><th>المشارك</th><th>أيام الحضور</th><th>أسابيع الحضور</th><th>جلسات الحضور</th>${th}<th>نسبة الحضور</th></tr></thead>`+
+  (o.r.length?o.r.map(x=>`<tr><td>${esc(x.s.name)}</td><td>${x.c.days}</td><td>${x.c.weeks}</td><td>${x.c.sess}</td>`+ST.map(y=>`<td>${x.c[y[0]]}</td>`).join('')+`<td><b>${rate(x.c)}%</b></td></tr>`).join(''):`<tr><td colspan="${ST.length+5}">لا يوجد مشاركون</td></tr>`)+'</table>'});
+ return h}
+function doPrint(pdf,o){
+ o=o||{};const ct=o.content||'both',scp=o.scope||sc,ws=wsFor(scp),label=scp==='cur'?curW().name:'جميع الأسابيع',
+ head=`<h1>${esc(T('title'))} ${esc(T('icon'))}</h1><div class="sub">${esc(T('org'))} ${esc(dateText())}</div>`,parts=[];
+ if(ct!=='stats')ws.forEach(w=>parts.push(head+viewPrint(w)));
+ if(ct!=='view')parts.push(head+statsPrint(ws,label));
+ $('pr').innerHTML=parts.map((x,i)=>`<div class="${i<parts.length-1?'pb':''}">${x}</div>`).join('');
+ if(pdf)toast('للحفظ كملف: اختر الوجهة «حفظ كـ PDF» في نافذة الطباعة');
+ setTimeout(()=>window.print(),300)}
+/* الإعدادات */
+function setLb(k,v){v=v.trim();if(v)S.labels[k]=v;else delete S.labels[k];save();render()}
+function setFt(k,v){S.feat[k]=v;save();render()}
+let dsw=null;function setDate(w,i,v){v=v.trim();if(v)S.dates[w+'|'+i]=v;else delete S.dates[w+'|'+i];save();render()}
+function setPr(k,v){S.settings[k]=v;save();render()}
+function prOpts(){return{content:S.settings.printContent||'both',scope:S.settings.printScope||'cur'}}
+function setDm(v){S.settings.dateMode=v;save();render()}
+function addWeek(){S.weeks.push({id:uid(),name:'الأسبوع '+(S.weeks.length+1)});save();render()}
+function renW(id,v){v=v.trim();if(v){S.weeks.find(w=>w.id===id).name=v;save();render()}}
+function setCur(id){S.cur=id;save();render()}
+function delW(id){if(S.weeks.length<2)return toast('يجب بقاء أسبوع واحد');ask('حذف الأسبوع مع كل تحضيره؟',()=>{S.weeks=S.weeks.filter(w=>w.id!==id);Object.keys(S.att).forEach(k=>{if(k.startsWith(id+'|'))delete S.att[k]});if(S.cur===id)S.cur=S.weeks[0].id;save();render()},{red:1,yes:'حذف'})}
+function togGO(v){S.groupsOn=v;tab=null;vtab=null;save();render()}
+function renG(id,v){v=v.trim();if(v){G(id).name=v;save();render()}}
+function togG(id,v){G(id).on=v;save();render()}
+function addG(){const v=$('nh').value.trim();if(!v)return;S.groups.push({id:uid(),name:v,on:true,students:[]});save();render()}
+function delG(id){if(S.groups.length<2)return toast('يجب بقاء مجموعة واحدة على الأقل');ask('حذف المجموعة بكل مشاركيها؟',()=>{const g=G(id);g.students.forEach(s=>Object.keys(S.att).forEach(k=>{if(k.endsWith('|'+s.id))delete S.att[k]}));S.groups=S.groups.filter(x=>x.id!==id);delete S.locks['g_'+id];save();render()},{red:1,yes:'حذف'})}
+function renDay(i,v){v=v.trim();if(v){S.days[i].n=v;save();render()}}
+function togDay(i,v){S.days[i].on=v;save();render()}
+function setLock(k,on){if(on){const v=$('c_'+k).value.trim();if(!v)return toast('اكتب رمز القفل أولاً');S.locks[k]={on:true,code:v};unlocked[k]=1}else S.locks[k]={on:false,code:''};save();render()}
+function lockRow(k,n){const l=S.locks[k]||{};return `<div class="line"><b>${esc(n)}${LKI(k)}</b><span class="row" style="margin:0"><input id="c_${k}" placeholder="${l.on?'رمز جديد':'رمز القفل'}" style="width:110px"><button class="btn" onclick="setLock('${k}',true)">${l.on?'تغيير':'تفعيل'}</button><button class="btn g" ${l.on?'':'disabled'} onclick="setLock('${k}',false)">إلغاء القفل</button></span></div>`}
+function exportData(){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(S,null,1)],{type:'application/json'}));a.download='murshid_backup.json';a.click()}
+function importData(inp){const f=inp.files[0];if(!f)return;const r=new FileReader();r.onload=e=>{try{const d=JSON.parse(e.target.result);if(d&&d.groups){S=d;S.att=S.att||{};try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}const p=window.cloudPushAll?Promise.race([window.cloudPushAll(),new Promise((_,j)=>setTimeout(j,8000))]):Promise.resolve();p.then(()=>location.reload(),()=>toast('تعذّر الرفع للسحابة، تأكد من الاتصال'))}else toast('ملف غير صالح')}catch(err){toast('ملف غير صالح')}};r.readAsText(f)}
+function settingsV(){
+ const dm=S.settings.dateMode,op=(v,l)=>`<option value="${v}" ${dm===v?'selected':''}>${l}</option>`;
+ return `<div class="card"><h2>⚙ الأسماء والمسميات</h2><div class="mut" style="margin-bottom:6px">اسم البرنامج ومسميات الخانات (عرض الحضور، الإحصائيات، الرصد، التحضير، الإعدادات) قابلة للتعديل. اترك الحقل فارغاً لإرجاع الاسم الأصلي.</div>`+
+ LB.map(x=>`<div class="lab"><span>${x[1]}</span><input value="${esc(S.labels[x[0]]||'')}" placeholder="${esc(x[2])}" onchange="setLb('${x[0]}',this.value)"></div>`).join('')+'</div>'+
+ `<div class="card"><h2>الأسابيع</h2><div class="mut" style="margin-bottom:6px">اختر الأسبوع الحالي (يُرصد فيه الحضور ويظهر في خيار «الأسبوع الحالي» في الإحصائيات والطباعة).</div>`+
+ S.weeks.map(w=>`<div class="line"><label style="display:flex;gap:6px;align-items:center;font-weight:700"><input type="radio" name="cw" ${S.cur===w.id?'checked':''} onchange="setCur('${w.id}')"> حالي</label><input value="${esc(w.name)}" onchange="renW('${w.id}',this.value)" style="flex:1;min-width:140px"><button class="btn x" onclick="delW('${w.id}')">حذف</button></div>`).join('')+
+ `<div class="row" style="margin-top:10px"><button class="btn" onclick="addWeek()">+ إضافة أسبوع</button></div></div>`+
+ `<div class="card"><h2>نظام المجموعات</h2><div class="line"><label style="font-weight:700"><input type="checkbox" ${S.groupsOn?'checked':''} onchange="togGO(this.checked)"> تفعيل المجموعات</label></div><div class="mut">الوضع الافتراضي: معطّل، ويظهر الجميع في قائمة واحدة. عند التفعيل تظهر المجموعات في التحضير وعرض الحضور، وتظهر «${esc(T('grpStats'))}» في خانة ${esc(T('modeT'))}.</div></div>`+
+ (S.groupsOn?`<div class="card"><h2>المجموعات</h2><div class="mut" style="margin-bottom:6px">المجموعة المعطّلة تختفي دون حذف بياناتها.</div>`+
+ S.groups.map(g=>`<div class="line"><input value="${esc(g.name)}" onchange="renG('${g.id}',this.value)" style="flex:1;min-width:150px"><label class="mut"><input type="checkbox" ${g.on?'checked':''} onchange="togG('${g.id}',this.checked)"> مفعّلة</label><span class="mut">${g.students.length} مشارك</span><button class="btn x" onclick="delG('${g.id}')">حذف</button></div>`).join('')+
+ `<div class="row" style="margin-top:10px"><input id="nh" placeholder="اسم مجموعة جديدة..." style="flex:1"><button class="btn" onclick="addG()">+ إضافة مجموعة</button></div></div>`:'')+
+ `<div class="card"><h2>أيام التحضير (من السبت إلى الجمعة)</h2>`+S.days.map((d,i)=>`<div class="line"><input value="${esc(d.n)}" onchange="renDay(${i},this.value)" style="flex:1"><label class="mut"><input type="checkbox" ${d.on?'checked':''} onchange="togDay(${i},this.checked)"> مفعّل</label></div>`).join('')+'</div>'+
+ `<div class="card"><h2>تواريخ الأيام (في ${esc(T('modeV'))})</h2><div class="mut" style="margin-bottom:6px">اكتب تاريخ كل يوم يدوياً ليظهر بجانب اسم اليوم مثل «السبت 10/24». التواريخ خاصة بكل أسبوع، وليس لها علاقة بالتاريخ الفعلي أعلى الصفحة. اتركه فارغاً لإخفائه.</div>`+(S.weeks.some(w=>w.id===dsw)?'':(dsw=S.cur,''))+`<div class="row"><select onchange="dsw=this.value;render()">${S.weeks.map(w=>`<option value="${w.id}" ${dsw===w.id?'selected':''}>${esc(w.name)}</option>`).join('')}</select></div>`+S.days.map((d,i)=>d.on?`<div class="line"><b>${esc(d.n)}</b><input value="${esc(DT(dsw,i))}" placeholder="مثال: 10/24" onchange="setDate('${dsw}',${i},this.value)" style="width:140px"></div>`:'').join('')+'</div>'+
+ `<div class="card"><h2>تفعيل وإلغاء العناصر</h2>`+FT.map(x=>`<div class="line"><label><input type="checkbox" ${F(x[0])?'checked':''} onchange="setFt('${x[0]}',this.checked)"> ${x[1]}</label></div>`).join('')+
+ `<div class="line"><span>التاريخ تحت العنوان</span><select onchange="setDm(this.value)">${op('none','بدون')}${op('h','هجري')}${op('g','ميلادي')}${op('hg','هجري وميلادي')}${op('d','اليوم فقط')}${op('dh','اليوم + هجري')}${op('dg','اليوم + ميلادي')}${op('dhg','اليوم + هجري + ميلادي')}</select></div></div>`+
+ `<div class="card"><h2>أقفال الرموز 🔒</h2>`+lockRow('view',T('modeV'))+lockRow('stats',T('modeT'))+lockRow('rasd',T('modeA'))+lockRow('set',T('modeS'))+'</div>'+
+ `<div class="card"><h2>الطباعة وملف PDF</h2><div class="mut" style="margin-bottom:6px">اختر ما يُطبع ونطاقه، ثم اضغط «الطباعة وملف PDF»؛ ولحفظ ملف اختر من نافذة الطباعة الوجهة «حفظ كـ PDF». الطباعة بنفس شكل ${esc(T('modeV'))}.</div>`+
+ `<div class="line"><span>المحتوى</span><select onchange="setPr('printContent',this.value)">${[['both',T('modeV')+' و'+T('modeT')],['view',T('modeV')+' فقط'],['stats',T('modeT')+' فقط']].map(x=>`<option value="${x[0]}" ${prOpts().content===x[0]?'selected':''}>${esc(x[1])}</option>`).join('')}</select></div>`+
+ `<div class="line"><span>النطاق</span><select onchange="setPr('printScope',this.value)"><option value="cur" ${prOpts().scope==='cur'?'selected':''}>الأسبوع الحالي (${esc(curW().name)})</option><option value="all" ${prOpts().scope==='all'?'selected':''}>جميع الأسابيع</option></select></div>`+
+ `<div class="row" style="margin-top:10px"><button class="btn" onclick="doPrint(true,prOpts())">🖨 الطباعة وملف PDF</button></div></div>`+
+ `<div class="card"><h2>نسخة احتياطية</h2><div class="row"><button class="btn g" onclick="exportData()">⬇ تصدير نسخة (JSON)</button><label class="btn g" style="cursor:pointer">⬆ استيراد نسخة<input type="file" accept=".json" hidden onchange="importData(this)"></label></div></div>`}
+const MF=['groups','days','weeks','groupsOn','labels','feat','locks','settings','dates','seed1'];
+let pendR=false;
+function applyRemote(meta,att){
+ if(meta)MF.forEach(f=>{if(meta[f]!==undefined&&meta[f]!==null)S[f]=meta[f]});
+ if(att)S.att=att;
+ S.labels=S.labels||{};S.feat=S.feat||{};S.locks=S.locks||{};S.att=S.att||{};S.settings=S.settings||{dateMode:'none'};S.dates=S.dates||{};S.groupsOn=!!S.groupsOn;
+ if(!S.groups||!S.groups.length)S.groups=[{id:uid(),name:'المجموعة الأولى',on:true,students:[]}];
+ if(!S.weeks||!S.weeks.length){const w=uid();S.weeks=[{id:w,name:'الأسبوع 1'}]}
+ if(!S.weeks.find(w=>w.id===S.cur))S.cur=S.weeks[0].id;
+ try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}
+ const a=document.activeElement;
+ if(a&&/^(INPUT|SELECT|TEXTAREA)$/.test(a.tagName)){if(!pendR){pendR=true;a.addEventListener('blur',()=>{pendR=false;render()},{once:true})}}
+ else render();
+}
+render();setInterval(()=>{$('dt').textContent=dateText()},60000);
+</script>
+<script type="module">
+import {initializeApp} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {initializeFirestore,persistentLocalCache,persistentMultipleTabManager,getFirestore,doc,collection,onSnapshot,setDoc,getDocs,writeBatch,deleteField} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+const st=t=>{const e=document.getElementById('cl');if(e)e.textContent=t};
+const cfg=window.FIREBASE_CONFIG;
+if(!cfg||!cfg.apiKey||cfg.apiKey.startsWith('PASTE')){st('💾 وضع محلي — لم يتم ربط Firebase بعد')}
+else{
+ const app=initializeApp(cfg);let db;
+ try{db=initializeFirestore(app,{localCache:persistentLocalCache({tabManager:persistentMultipleTabManager()})})}catch(e){db=getFirestore(app)}
+ const room=doc(db,'rooms',window.ROOM),attCol=collection(db,'rooms',window.ROOM,'att');
+ const MF=['groups','days','weeks','groupsOn','labels','feat','locks','settings','dates','seed1'];
+ let ready=false,roomExists=false,lastMeta={},lastAtt={},pending=false;
+ const ser=(S,f)=>JSON.stringify(S[f]===undefined?null:S[f]);
+ const sp=k=>{const i=k.indexOf('|');return[k.slice(0,i),k.slice(i+1)]};
+ const show=()=>st(!navigator.onLine?'📴 بدون اتصال — ستُزامَن التعديلات عند عودة الإنترنت':pending?'⏳ جارٍ المزامنة…':'☁️ متصل — التعديلات تظهر للجميع مباشرة');
+ const fail=e=>{console.error(e);st('⚠️ تعذّر الحفظ في السحابة — راجع قواعد Firestore')};
+ addEventListener('online',show);addEventListener('offline',show);
+ st('☁️ جارٍ الاتصال…');
+ window.cloudSync=()=>{
+  if(!ready)return;const S=window.__S();
+  const mu={};MF.forEach(f=>{const j=ser(S,f);if(lastMeta[f]!==j){mu[f]=j;lastMeta[f]=j}});
+  if(Object.keys(mu).length)setDoc(room,mu,{merge:true}).catch(fail);
+  const by={};const put=(k,v)=>{const[w,f]=sp(k);(by[w]=by[w]||{})[f]=v};
+  for(const k in S.att)if(lastAtt[k]!==S.att[k])put(k,S.att[k]);
+  for(const k in lastAtt)if(!(k in S.att))put(k,deleteField());
+  lastAtt={...S.att};
+  for(const w in by)setDoc(doc(attCol,w),by[w],{merge:true}).catch(fail);
+ };
+ window.cloudPushAll=async()=>{
+  const S=window.__S();const mu={};MF.forEach(f=>{mu[f]=ser(S,f);lastMeta[f]=mu[f]});
+  await setDoc(room,mu);roomExists=true;
+  const by={};for(const k in S.att){const[w,f]=sp(k);(by[w]=by[w]||{})[f]=S.att[k]}
+  const old=await getDocs(attCol);const b=writeBatch(db);
+  old.forEach(d=>{if(!by[d.id])b.delete(d.ref)});
+  for(const w in by)b.set(doc(attCol,w),by[w]);
+  await b.commit();lastAtt={...S.att};
+ };
+ onSnapshot(room,{includeMetadataChanges:true},s=>{
+  pending=s.metadata.hasPendingWrites;
+  if(!s.exists()){
+   if(!s.metadata.fromCache){roomExists=true;ready=true;window.cloudPushAll().then(show).catch(fail)}
+   return;
+  }
+  roomExists=true;
+  if(!s.metadata.hasPendingWrites){
+   const d=s.data(),meta={};
+   MF.forEach(f=>{if(typeof d[f]==='string'){lastMeta[f]=d[f];try{meta[f]=JSON.parse(d[f])}catch(e){}}});
+   const first=!ready;ready=true;
+   const before=MF.map(f=>ser(window.__S(),f)).join('|');
+   const after=MF.map(f=>meta[f]!==undefined?JSON.stringify(meta[f]):ser(window.__S(),f)).join('|');
+   if(first||before!==after)applyRemote(meta,null);
+  }
+  procAtt();
+ },fail);
+ let attSnap=null;
+ const procAtt=()=>{
+  const s=attSnap;if(!s||!roomExists||s.metadata.hasPendingWrites||(s.metadata.fromCache&&s.empty)){show();return}
+  const att={};s.forEach(d=>{const o=d.data();for(const f in o)att[d.id+'|'+f]=o[f]});
+  lastAtt={...att};
+  if(JSON.stringify(att)!==JSON.stringify(window.__S().att))applyRemote(null,att);
+  show();
+ };
+ onSnapshot(attCol,{includeMetadataChanges:true},s=>{pending=s.metadata.hasPendingWrites;attSnap=s;procAtt()},fail);
+}
+</script>
+</body>
+</html>
